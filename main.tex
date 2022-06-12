@@ -1,0 +1,106 @@
+
+
+
+
+\usepackage[utf8]{inputenc}
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{listings}
+\usepackage{blkarray}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{bm}
+\usetikzlibrary{automata, positioning}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\usepackage{amsmath}
+\setbeamertemplate{caption}[numbered]{}
+
+
+\title{\typedef{ASSIGNMENT-7}}       
+\author{MUSKAN JAISWAL -cs21btech11037}
+\date{May 2022}
+\logo{\large \Latex{}}
+\begin{document}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+\section{Abstract}
+	\begin{frame}{Abstract}
+		\begin{itemize}
+			\item 	This document contains the explanation of question  9.12  of Papoulis Pillai Probability book of chapter sequence of random variables.
+		\end{itemize}
+	\end{frame}
+	
+\maketitle
+
+\section{QUESTION:}
+\begin{frame}{}
+\begin{block}{}
+
+Show that :- If x(t) is a process with zero mean and auto correlation $f(t_1)f(t_2) w(t_1-t_2) $, then the process $y(t)=\frac{x(t)}{f(t)}$ is WSS with auto correlation $w(t_1-t_2) $. If x(t) is white noise with auto correlation $q(t_1) \times \delta(t_1-t_2)$
+then the process $z(t) = \frac{x(t)}{q(t)}$ is WSS white noise with auto correlation 
+$\delta(t_1-t_2) $.
+
+\end{block}
+\end{frame}
+\section{ANSWERS: }
+\begin{frame}{$1^{st}$ part:-}
+According to question , x(t) is a zero mean process. So, E(x(T))=0 and 
+$ u_y=u_x\int_{-\infty}^\infty f(\alpha) d\alpha $\\
+
+$y(t)=\frac{x(t)}{f(t)}\\
+R_{yy}(t_1,t_2)= \frac{R_{xx}(t_1,T_2)}{f(t_1)f(t_2)}\\
+=\frac{f(t_1)f(t_2)w(t_1-t_2)}{f(t_1)f(t_2)}\\
+=w(t_1-t_2)$ 
+
+\end{frame}
+\begin{frame}{$2^{nd} $ part:-}
+x(t) is a white noise process which means \\
+$R_x(t_1-t_2)=F^{-1}(N_0/2)= {N_0 \delta(t_1-t_2)}/2\\
+\delta(x)=\{    \infty \hspace{0.5cm} x=0 \\
+                  0 \hspace{0.5cm}   x\not=0 \} $
+                  
+                 This shows that  $X(t_1)$ and $x(t_2) $ are correlated only when $t_1=
+                 t_2$ and uncorrelated when $t_1  \not = t_2$.
+                 Therefore, $R_{xx}(t_1,t_2)=0$ , when $t_1$ is not equal to $t_2 $\\
+                $ R_{xx}(t_1,t_2)=q(t_1) \times \delta(t_1-t_2) , when t_1=t_2 $\\
+                 Hence, we can  write $R_{xx}(t_1,t_2) $ as
+                 $ (q(t_1))^{1/2} (q(t_2))^{1/2} \times \delta(t_1-t_2) \hspace{0.5cm} (q(t_1)=q(t_2) )\\
+                  z(t)=\frac{x(t)}{q(t)}         \\
+                  R_{zz}=\frac{q(t_1) q(t_2) \delta(t_1-t_2) }{q(t_1)q(t_2)}\\
+                  R_{zz}=\delta(t_1-t_2) $\\
+                  Hence,proved 
+            
+
+\end{frame}
+\end{document}
